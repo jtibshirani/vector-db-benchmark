@@ -52,6 +52,9 @@ class ElasticConfigurator(BaseConfigurator):
         self.client.indices.create(
             index=ELASTIC_INDEX,
             mappings={
+                "_source": {
+                    "enabled": False
+                },
                 "properties": {
                     "vector": {
                         "type": "dense_vector",

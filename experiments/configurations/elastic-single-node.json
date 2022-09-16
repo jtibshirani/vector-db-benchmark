@@ -23,13 +23,9 @@
     },
     "collection_params": { "index_options": { "m": 16, "ef_construction": 128 } },
     "search_params": [
-      { "parallel": 1, "num_candidates": 128 }, { "parallel": 1, "num_candidates": 256 }, { "parallel": 1, "num_candidates": 512 },
-      { "parallel": 2, "num_candidates": 128 }, { "parallel": 2, "num_candidates": 256 }, { "parallel": 2, "num_candidates": 512 },
-      { "parallel": 4, "num_candidates": 128 }, { "parallel": 4, "num_candidates": 256 }, { "parallel": 4, "num_candidates": 512 },
-      { "parallel": 8, "num_candidates": 128 }, { "parallel": 8, "num_candidates": 256 }, { "parallel": 8, "num_candidates": 512 },
-      { "parallel": 100, "num_candidates": 128 }, { "parallel": 100, "num_candidates": 256 }, { "parallel": 100, "num_candidates": 512 }
+      { "parallel": 1, "num_candidates": 128 }
     ],
-    "upload_params": { "parallel": 16 }
+    "upload_params": { "parallel": 2 }
   },
   {
     "name": "elastic-m-32-ef-128",
