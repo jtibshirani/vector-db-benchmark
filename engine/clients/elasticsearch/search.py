@@ -54,8 +54,11 @@ class ElasticSearcher(BaseSearcher):
                 "k": top,
                 **{"num_candidates": 100, **cls.search_params},
             },
+            docvalue_fields=["vector_id"],
+            stored_fields="_none_"
         )
+
         return [
-            (uuid.UUID(hex=hit["_id"]).int, hit["_score"])
+            (uuid.UUID(hex=hit["fields"]["vector_id"][0]).int, hit["_score"])
             for hit in res["hits"]["hits"]
         ]

@@ -14,7 +14,7 @@ from engine.clients.elasticsearch import (
 class ElasticConfigurator(BaseConfigurator):
     DISTANCE_MAPPING = {
         Distance.L2: "l2_norm",
-        Distance.COSINE: "dot_product",
+        Distance.COSINE: "cosine",
         Distance.DOT: "dot_product",
     }
 
@@ -46,8 +46,6 @@ class ElasticConfigurator(BaseConfigurator):
         vector_size,
         collection_params,
     ):
-        if distance == Distance.DOT:
-            raise IncompatibilityError
 
         self.client.indices.create(
             index=ELASTIC_INDEX,
@@ -56,6 +54,10 @@ class ElasticConfigurator(BaseConfigurator):
                     "enabled": False
                 },
                 "properties": {
+                    "vector_id": {
+                      "type": "keyword",
+                      "index": False
+                    },
                     "vector": {
                         "type": "dense_vector",
                         "dims": vector_size,

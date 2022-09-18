@@ -18,7 +18,7 @@
   {
     "name": "deep-image-96-angular",
     "vector_size": 96,
-    "distance": "cosine",
+    "distance": "dot",
     "type": "h5",
     "path": "deep-image-96-angular/deep-image-96-angular.hdf5",
     "link": "http://ann-benchmarks.com/deep-image-96-angular.hdf5"
