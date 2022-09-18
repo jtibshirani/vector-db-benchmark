@@ -46,9 +46,11 @@ class ElasticConfigurator(BaseConfigurator):
         vector_size,
         collection_params,
     ):
-
         self.client.indices.create(
             index=ELASTIC_INDEX,
+            settings={
+                "refresh_interval": -1
+            },
             mappings={
                 "_source": {
                     "enabled": False
