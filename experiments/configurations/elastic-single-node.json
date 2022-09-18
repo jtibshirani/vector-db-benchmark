@@ -23,7 +23,7 @@
     },
     "collection_params": { "index_options": { "m": 16, "ef_construction": 128 } },
     "search_params": [
-      { "parallel": 1, "num_candidates": 128 }
+      { "parallel": 100, "num_candidates": 128 }
     ],
     "upload_params": { "parallel": 1 }
   },

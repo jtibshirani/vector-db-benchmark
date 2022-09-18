@@ -63,5 +63,5 @@ class ElasticUploader(BaseUploader):
 
     @classmethod
     def post_upload(cls, _distance):
-        cls.client.indices.forcemerge(index=ELASTIC_INDEX, wait_for_completion=True)
+        cls.client.indices.forcemerge(index=ELASTIC_INDEX, max_num_segments=1, wait_for_completion=True)
         return {}
