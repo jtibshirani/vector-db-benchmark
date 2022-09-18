@@ -25,7 +25,7 @@
     "search_params": [
       { "parallel": 1, "num_candidates": 128 }
     ],
-    "upload_params": { "parallel": 2 }
+    "upload_params": { "parallel": 1 }
   },
   {
     "name": "elastic-m-32-ef-128",
