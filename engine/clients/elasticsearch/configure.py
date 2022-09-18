@@ -14,7 +14,7 @@ from engine.clients.elasticsearch import (
 class ElasticConfigurator(BaseConfigurator):
     DISTANCE_MAPPING = {
         Distance.L2: "l2_norm",
-        Distance.COSINE: "cosine",
+        Distance.COSINE: "dot_product",
         Distance.DOT: "dot_product",
     }
 
